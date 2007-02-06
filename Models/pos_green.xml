@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!-- project: /home/maggse/software/3d/spirit/spirit_52_at -->
+<!-- cursor: 17.732082366943 6.917635917664 -0.193053722382 -->
+
+<PropertyList>
+	<path>green.ac</path>
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>25000</max-m>
+	</animation>
+
+	<Hull.001Xparams>
+		<light-near>0.4</light-near>
+		<light-med>0.8</light-med>
+		<light-far>10</light-far>
+	</Hull.001Xparams>
+
+	<animation>
+		<name>Hull.001XGroup</name>
+		<object-name>Hull.001X0</object-name>
+		<object-name>Hull.001X1</object-name>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<name>Hull.001XGroupNight</name>
+		<object-name>Hull.001XGroup</object-name>
+		<condition>
+			<greater-than>
+				<property>/sim/time/sun-angle-rad</property>
+				<value>1.57</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>alpha-test</type>
+		<object-name>Hull.001XGroup</object-name>
+		<alpha-factor>0.001</alpha-factor>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>Hull.001X0</object-name>
+		<offset-m>24.655417</offset-m>
+		<axis>
+			<x>8.335141</x>
+			<y>23.202717</y>
+			<z>0.221267</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>Hull.001X1</object-name>
+		<offset-m>24.655133</offset-m>
+		<axis>
+			<x>8.335141</x>
+			<y>23.202717</y>
+			<z>-0.186915</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>Hull.001X0</object-name>
+		<spherical type="bool">true</spherical>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>Hull.001X1</object-name>
+		<spherical type="bool">true</spherical>
+	</animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>Hull.001X0</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep alias="../../../../Hull.001Xparams/light-near"/>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep alias="../../../../Hull.001Xparams/light-med"/>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep alias="../../../../Hull.001Xparams/light-far"/>
+			</entry>
+		</interpolation>
+	</animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>Hull.001X1</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep alias="../../../../Hull.001Xparams/light-near"/>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep alias="../../../../Hull.001Xparams/light-med"/>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep alias="../../../../Hull.001Xparams/light-far"/>
+			</entry>
+		</interpolation>
+	</animation>
+
+</PropertyList>

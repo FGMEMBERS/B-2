@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<!-- project: /home/maggse/software/3d/spirit/spirit_51_at -->
+<!-- cursor: 0.000000000000 0.000000000000 0.000000000000 -->
+
+<PropertyList>
+	<path>la_light.ac</path>
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>10000</max-m>
+	</animation>
+
+	<la_light_sXparams>
+		<light-near>0.6</light-near>
+		<light-med>1.0</light-med>
+		<light-far>10</light-far>
+	</la_light_sXparams>
+
+	<animation>
+		<name>la_light_sXGroup</name>
+		<object-name>la_light_sX0</object-name>
+		<object-name>la_light_sX1</object-name>
+		<object-name>la_light_sX2</object-name>
+		<object-name>la_light_sX3</object-name>
+		<object-name>la_light_sX4</object-name>
+		<object-name>la_light_sX5</object-name>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<name>la_light_sXGroupNight</name>
+		<object-name>la_light_sXGroup</object-name>
+		<condition>
+			<and>
+			<greater-than>
+				<property>/sim/time/sun-angle-rad</property>
+				<value>1.25</value>
+			</greater-than>
+			
+			<equals>
+				<property>/gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>alpha-test</type>
+		<object-name>la_light_sXGroup</object-name>
+		<alpha-factor>0.001</alpha-factor>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>la_light_sX0</object-name>
+		<offset-m>6.097066</offset-m>
+		<axis>
+			<x>1.842723</x>
+			<y>-5.73549</y>
+			<z>-0.939545</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>la_light_sX1</object-name>
+		<offset-m>8.977482</offset-m>
+		<axis>
+			<x>-8.818824</x>
+			<y>-0.171246</y>
+			<z>-1.671585</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>la_light_sX2</object-name>
+		<offset-m>8.95015</offset-m>
+		<axis>
+			<x>-8.818957</x>
+			<y>-0.170231</y>
+			<z>-1.517299</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>la_light_sX3</object-name>
+		<offset-m>6.071032</offset-m>
+		<axis>
+			<x>1.864306</x>
+			<y>5.701616</y>
+			<z>-0.934542</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>la_light_sX4</object-name>
+		<offset-m>6.348943</offset-m>
+		<axis>
+			<x>1.842217</x>
+			<y>-6.002924</y>
+			<z>-0.938197</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>la_light_sX5</object-name>
+		<offset-m>6.325279</offset-m>
+		<axis>
+			<x>1.864816</x>
+			<y>5.971266</y>
+			<z>-0.935737</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>la_light_sX0</object-name>
+		<spherical type="bool">true</spherical>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>la_light_sX1</object-name>
+		<spherical type="bool">true</spherical>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>la_light_sX2</object-name>
+		<spherical type="bool">true</spherical>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>la_light_sX3</object-name>
+		<spherical type="bool">true</spherical>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>la_light_sX4</object-name>
+		<spherical type="bool">true</spherical>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>la_light_sX5</object-name>
+		<spherical type="bool">true</spherical>
+	</animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>la_light_sX0</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep alias="../../../../la_light_sXparams/light-near"/>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep alias="../../../../la_light_sXparams/light-med"/>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep alias="../../../../la_light_sXparams/light-far"/>
+			</entry>
+		</interpolation>
+	</animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>la_light_sX1</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep alias="../../../../la_light_sXparams/light-near"/>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep alias="../../../../la_light_sXparams/light-med"/>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep alias="../../../../la_light_sXparams/light-far"/>
+			</entry>
+		</interpolation>
+	</animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>la_light_sX2</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep alias="../../../../la_light_sXparams/light-near"/>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep alias="../../../../la_light_sXparams/light-med"/>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep alias="../../../../la_light_sXparams/light-far"/>
+			</entry>
+		</interpolation>
+	</animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>la_light_sX3</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep alias="../../../../la_light_sXparams/light-near"/>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep alias="../../../../la_light_sXparams/light-med"/>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep alias="../../../../la_light_sXparams/light-far"/>
+			</entry>
+		</interpolation>
+	</animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>la_light_sX4</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep alias="../../../../la_light_sXparams/light-near"/>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep alias="../../../../la_light_sXparams/light-med"/>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep alias="../../../../la_light_sXparams/light-far"/>
+			</entry>
+		</interpolation>
+	</animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>la_light_sX5</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep alias="../../../../la_light_sXparams/light-near"/>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep alias="../../../../la_light_sXparams/light-med"/>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep alias="../../../../la_light_sXparams/light-far"/>
+			</entry>
+		</interpolation>
+	</animation>
+
+</PropertyList>
