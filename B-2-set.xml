@@ -62,7 +62,7 @@ B-2 set file.
 
     <view n="5">
       <config>
-        <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+        <target-z-offset-m archive="y" type="double">2.0</target-z-offset-m>
       </config>
     </view>
 
@@ -97,6 +97,18 @@ B-2 set file.
 		 <bombbay/>
 		 <fuelhatch/>
 		 <hatch/>
+		 <fuel/>
+		 <eng/>
+		 <ctrl/>
+		 <syst/>
+		 <apmodeto/>
+		 <apmodela/>
+		 <apmodeast/>
+		 <apmodeap/>
+		 <aplt/>
+		 <wpns/>
+		 <syst3/>
+		 <fuel3/>
 	</doors>
     </model>
 
@@ -122,7 +134,7 @@ B-2 set file.
       <setting>0.0</setting>
       <setting>0.2</setting>
       <setting>0.4</setting>
-      <setting>0.8</setting>
+      <setting>0.7</setting>
       <setting>1.0</setting>
     </spoilers>
 
@@ -153,18 +165,20 @@ B-2 set file.
 	      <desc>open/close bombdoors</desc>
       </key>
       
-      <line>Rudder (drag) is your friend, as you have to correct for yaw permanently!</line>
-      <line>GLAS (Flap control) used to pitch the B-2 down.</line>
+      <line>Rudder control(spoiler drag) is your friend, as you have to correct for yaw!</line>
+      <line>On takeoff sideslip stabilizer is enabled automatically!</line>
+      <line>5 flymodes available(LA,TO,FL,AP,AS), click on buttons to select.</line>
+      <line>GLAS (Flap control) can be used to pitch the B-2 down.</line>
       <line>Takeoff speed: >160 kts</line>
-      <line>Landing speed: 170-145 kts/Full spoilers</line>
+      <line>Landing speed: 160-135 kts/Full spoilers</line>
       <line>No need for flaps on this plane!</line>
       <line>Good Luck!</line>
     </help>
     
-    <ai>
+   <!-- <ai>
 	    <enabled type="bool">true</enabled>
 	    <scenario>refueling_demo</scenario>
-    </ai>
+    </ai>-->
 
   </sim>
 
@@ -179,7 +193,7 @@ B-2 set file.
       <take-off-pitch-deg type="float">2.0</take-off-pitch-deg>
       <target-speed-kt type="float">280.0</target-speed-kt>
       <climb-out-initial-pitch-deg type="float">3.0</climb-out-initial-pitch-deg>
-      <climb-out-final-pitch-deg type="float">2.5</climb-out-final-pitch-deg>
+      <climb-out-final-pitch-deg type="float">2.0</climb-out-final-pitch-deg>
       <target-climb-rate-fpm type="float">2000.0</target-climb-rate-fpm>
      <target-descent-rate-fpm type="float">1500.0</target-descent-rate-fpm>
       <ground-roll-heading-deg type="float">-999.9</ground-roll-heading-deg>
@@ -197,7 +211,7 @@ B-2 set file.
 </locks>-->
 </autopilot>
 
-<!-- Start with the Parking Brake on and flaps deployed -->
+<!-- Start with the Parking Brake on -->
   <controls>
     <gear>
       <brake-parking type="double">1.0</brake-parking>
@@ -240,7 +254,18 @@ B-2 set file.
         <tank-num type="int">2</tank-num>
         <kill-when-empty type="bool">false</kill-when-empty>
       </tank>
-      
+      <tank n="3">
+	      <tank-num type="int">3</tank-num>
+	      <kill-when-empty type="bool">false</kill-when-empty>
+      </tank>
+      <tank n="4">
+	      <tank-num type="int">4</tank-num>
+	      <kill-when-empty type="bool">false</kill-when-empty>
+      </tank>
+      <tank n="5">
+	      <tank-num type="int">5</tank-num>
+	      <kill-when-empty type="bool">false</kill-when-empty>
+      </tank>
     </fuel>
   </consumables>
 
@@ -308,12 +333,12 @@ B-2 set file.
 
 <nasal>
 	<b2>
-		<file>Aircraft/B-2/b2.nas</file>
-		<script>yaw_control();</script>
+		<file>Aircraft/B-2/Nasal/b2.nas</file>
+		<script>init_delay();</script>
 	</b2>
 	<!--<b2-fuel>
 		<module>fuel</module>
-		<file>Aircraft/B-2/Models/fuel-aar.nas</file>
+		<file>Aircraft/B-2/Nasal/AAR.nas</file>
 	</b2-fuel>-->
 
  </nasal>

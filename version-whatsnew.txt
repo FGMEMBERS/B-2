@@ -2,9 +2,26 @@ XXXXXX B-2 Spirit (YASim) readme XXXXXX
 XXXXXX      Spirit Of Flight     XXXXXX
 XXXXXX       AD INEXPLORATA      XXXXXX
 
+
+XXXXXX  Version Nr: 0011 20022007 XXXXXX
+
+- new version: from 00 to 01/subversion 1
+- introducing flymodes :-)
+- new textures
+- new instruments
+- some clickable panels
+- updated model
+- minor changes to most files
+
+XXXXXX  Version Nr: 0005 07022007 XXXXXX
+
+- range/fuel load now match approx
+- added flying-HOWTO
+- JN added
+
 XXXXXX  Version Nr: 0004 05022007 XXXXXX
 
-- bug-fix: added rudder-trim reset when other autopilot modes are selected (led to unmanagable control)
+- bug-fix: added rudder-trim reset when other autopilot modes are selected (led to unmanagable controls)
 
 XXXXXX  Version Nr: 0003 04022007 XXXXXX
 

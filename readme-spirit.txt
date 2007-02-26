@@ -2,12 +2,7 @@ XXXXXX B-2 Spirit (YASim) readme XXXXXX
 XXXXXX      Spirit Of Flight     XXXXXX
 XXXXXX       AD INEXPLORATA      XXXXXX
 
-XXXXXX  Version Nr: 0002 01022007 XXXXXX
-
-- fixed submodels: AGM-154 now usable - still experimental
-- autopilot wing-leveler now misused to correct sideslip/yaw since some people had difficulties
-	> just fire it up at takeoff! (it needs to be balanced though)
-- adjusted approach speed and elevator
+XXXXXX  Version Nr: 0011 20022007 XXXXXX
 
 
 This aircraft model represents a hack of wing-only aircraft as the B-2. The limitations are the FDM on the one side because of its unability to accept airplanes with only one wing, and on the other side the lack of performance and structure data of the aircraft which are surprisingly classified. So the aircraft constructed here represents closely a wing-only aircraft matching the available performance data of the B-2 (3 wings, no vertical stabilizer) with some approximated guesswork. Despite this shortcommings the aircraft performs like a wing only aircraft in many ways, compared to notes from the Holten brothers and Jack Northrop which developed many wing-only aircraft and collected performance data without fly-by-wire support. This is a very crucial issue since the B-2 in real life is flown by computers which process the input of the pilots in a desired output, I doubt that someone ever disabled the computers and controlled everything by hand like it was done on the former wing-only projects. However in this hack you have the possibility to match your flight skills or take the autopilot (bug or true heading) which compensates for sideslip.
@@ -19,9 +14,10 @@ For those of u who just want to start with:
 Takeoff:	x Release parking brake
 		x Apply full throttle
 		x Rotate at 160kts (with full fuel load)
-		x Correct sideslip with rudder control (drag)
+		x Correct yaw/sideslip with rudder control (drag)
 		x Retract gear at end of runway
-		x option: Ctrl w enables the autopilot which corrects sideslip/yaw = easier to fly
+		x Ctrl w toggles the autopilot which corrects sideslip/yaw = easier to fly
+			enabled by default; 
 		x Climb at 3-4 degrees or approx.2000ft/min (for 0-6000ft 3000ft/min)
 
 Note: Takeoff length with full fuel load approx. 6500ft
@@ -50,7 +46,7 @@ o 	open/close fuel hatch
 O	open/close cockpit access hatch
 Ctrl d 	open/close bomb bay doors
 Ctrl j	launches 2 AGM-154 missiles (10 sec delay) - experimental
-Ctrl w 	enables autopilot which corrects for sideslip
+Ctrl w 	enables autopilot which corrects sideslip/rudder input possible
 rudder control  drag spoilers
 flap control	GLAS used to pitch down 0/5/10/15/20/25
 spoilers	0/0.25/0.5/0.75/1
@@ -87,8 +83,8 @@ FDM:	 	beta - in use / needs finetuning	85%complete
 3D model:	beta - in use / more accurate		80%complete
 Textures:	beta - in use / too bold, too few	70%complete
 Animations:	beta - in use / few missing		90%complete
-Autopilot:	alpha - in use / needs tuning		65%complete
-3Dcockpit:	alpha - in use / needs completion	40%complete
+Autopilot:	alpha - in use / needs tuning		70%complete
+3Dcockpit:	alpha - in use / needs completion	45%complete
 
 
 XXXX MODELLING XXXX

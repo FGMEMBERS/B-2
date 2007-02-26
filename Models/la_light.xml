@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- project: /home/maggse/software/3d/spirit/spirit_51_at -->
+<!-- project: B-2A Spirit -->
 <!-- cursor: 0.000000000000 0.000000000000 0.000000000000 -->
 
 <PropertyList>
@@ -69,7 +69,7 @@
 		<offset-m>8.977482</offset-m>
 		<axis>
 			<x>-8.818824</x>
-			<y>-0.171246</y>
+			<y>-0.228246</y>
 			<z>-1.671585</z>
 		</axis>
 	</animation>
@@ -80,7 +80,7 @@
 		<offset-m>8.95015</offset-m>
 		<axis>
 			<x>-8.818957</x>
-			<y>-0.170231</y>
+			<y>-0.227231</y>
 			<z>-1.517299</z>
 		</axis>
 	</animation>

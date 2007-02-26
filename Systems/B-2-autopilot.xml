@@ -24,9 +24,7 @@
   <!-- Roll Axis Modes                                                 -->
   <!-- =============================================================== -->
 
-  <!-- NO Wing leveler > compensation for sideslip!!! normal flight/ no rudder control possible-->
-
-
+  <!-- NO Wing leveler > compensation for sideslip / stabilisation of aircraft  -->
   
   <pid-controller>
 	  <name>Heading Hold (DG based) Stage 1</name>
@@ -34,38 +32,6 @@
 	  <enable>
 		  <prop>/autopilot/locks/heading</prop>
 		  <value>wing-leveler</value>
-	  </enable>
-	  <input>
-		  <prop>/orientation/side-slip-deg</prop>
-	  </input>
-	  <reference>
-		  <prop>/autopilot/internal/target-side-slip-deg</prop>
-		  <value>0.0</value>
-	  </reference>
-	  <output>
-		  <prop>/controls/flight/rudder</prop><!--<prop>/autopilot/internal/addrudder</prop>-->
-	  </output>
-	  <config>
-		  <Kp>5.0</Kp>        <!-- proportional gain -->
-		  <beta>1.0</beta>    <!-- input value weighing factor -->
-		  <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-		  <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-		  <!-- unfiltered derivative error -->
-		  <Ti>100.0</Ti>       <!-- integrator time -->
-		  <Td>0.00000000000007</Td>    <!-- derivator time -->
-		  <u_min>-0.20</u_min> <!-- minimum output clamp -->
-		  <u_max>0.20</u_max>  <!-- maximum output clamp -->
-	  </config>
-  </pid-controller>
-  
-  <!-- NO Wing leveler > compensation for sideslip! bug yaw compensation/ rudder c. possible (approach) -->
-  
-  <pid-controller>
-	  <name>Heading Hold (DG based) Stage 1</name>
-	  <debug>false</debug>
-	  <enable>
-		  <prop>/autopilot/locks/heading</prop>
-		  <value>nav1-hold</value>
 	  </enable>
 	  <input>
 		  <prop>/orientation/side-slip-deg</prop>
@@ -280,6 +246,103 @@
 		  <u_max>0.15</u_max>  <!-- maximum output clamp -->
 	  </config>
   </pid-controller>
+
+  <!-- Nav1 hold.  2 stage cascade controller. -->
+  
+  <!-- Stage #1 sets target roll based on diff between current heading -->
+  <!-- and target heading.--> 
+  <pi-simple-controller>
+	  <name>Nav1 Hold Stage 1</name>
+	  <debug>false</debug>
+	  <enable>
+		  <prop>/autopilot/locks/heading</prop>
+		  <value>nav1-hold</value>
+	  </enable>
+	  <input>
+		  <prop>/autopilot/internal/nav1-track-error-deg</prop>
+	  </input>
+	  <reference>
+		  <value>0.0</value>
+	  </reference>
+	  <output>
+		  <prop>/autopilot/internal/target-roll-deg</prop>
+	  </output>
+	  <config>
+		  <Kp>-1.0</Kp>        <!-- proportional gain -->
+		  <beta>1.0</beta>     <!-- input value weighing factor -->
+		  <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+		  <gamma>0.0</gamma>   <!-- input value weighing factor for -->
+		  <!-- unfiltered derivative error -->
+		  <Ti>15.0</Ti>        <!-- integrator time -->
+		  <u_min>-30.0</u_min> <!-- minimum output clamp -->
+		  <u_max>30.0</u_max>  <!-- maximum output clamp -->
+	  </config>
+  </pi-simple-controller>
+  
+  <!-- Stage #2 drives the ailerons to achieve the desired roll deg. -->
+  <pid-controller>
+	  <name>Nav1 Hold Stage 2</name>
+	  <debug>false</debug>
+	  <enable>
+		  <prop>/autopilot/locks/heading</prop>
+		  <value>nav1-hold</value>
+	  </enable>
+	  <input>
+		  <prop>/orientation/roll-deg</prop>
+	  </input>
+	  <reference>
+		  <prop>/autopilot/internal/target-roll-deg</prop>
+	  </reference>
+	  <output>
+		  <prop>/controls/flight/aileron</prop>
+	  </output>
+	  <config>
+		  <Kp>1.0</Kp>        <!-- proportional gain -->
+		  <beta>1.0</beta>    <!-- input value weighing factor -->
+		  <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+		  <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+		  <!-- unfiltered derivative error -->
+		  <Ti>10.0</Ti>       <!-- integrator time -->
+		  <Td>0.000000001</Td>    <!-- derivator time -->
+		  <u_min>-0.8</u_min> <!-- minimum output clamp -->
+		  <u_max>0.8</u_max>  <!-- maximum output clamp -->
+	  </config>
+  </pid-controller>
+  
+  <!-- Second Stage #2 drives the rudder - compensates for sideslip (should be 0) -->
+  
+  <pid-controller>
+	  <name>Heading Hold (DG based) Stage 1</name>
+	  <debug>false</debug>
+	  <enable>
+		  <prop>/autopilot/locks/heading</prop>
+		  <value>nav1-hold</value>
+	  </enable>
+	  <input>
+		  <prop>/orientation/side-slip-deg</prop>
+	  </input>
+	  <reference>
+		  <prop>/autopilot/internal/target-side-slip-deg</prop>
+		  <value>0.0</value>
+	  </reference>
+	  <output>
+		  <prop>/controls/flight/rudder</prop><!--<prop>/autopilot/internal/addrudder</prop>-->
+	  </output>
+	  <config>
+		  <Kp>9.0</Kp>        <!-- proportional gain -->
+		  <beta>1.0</beta>    <!-- input value weighing factor -->
+		  <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+		  <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+		  <!-- unfiltered derivative error -->
+		  <Ti>100.0</Ti>       <!-- integrator time -->
+		  <Td>0.00000000000007</Td>    <!-- derivator time -->
+		  <u_min>-0.20</u_min> <!-- minimum output clamp -->
+		  <u_max>0.20</u_max>  <!-- maximum output clamp -->
+	  </config>
+  </pid-controller>
+
+
+
 
 
 
@@ -554,6 +617,9 @@
     <output>
       <prop>/controls/engines/engine[0]/throttle</prop>
       <prop>/controls/engines/engine[1]/throttle</prop>
+      <prop>/controls/engines/engine[2]/throttle</prop>
+      <prop>/controls/engines/engine[3]/throttle</prop>
+      
     </output>
     <config>
       <Kp>0.1</Kp>        <!-- proportional gain -->
@@ -568,35 +634,38 @@
     </config>
   </pid-controller>
 
- <!-- Hold speed by varying pitch (Two stage cascading controller) --> 
+ <!-- sideslip via engines (bitch-on-speed) --> 
+ 
  <pid-controller>
-    <name>Speed hold (vary pitch) Stage #1</name>
+	 <name>Heading Hold (DG based) Stage 1</name>
     <debug>false</debug>
     <enable>
       <prop>/autopilot/locks/speed</prop>
       <value>speed-with-pitch</value>
     </enable>
     <input>
-      <prop>/autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
+		 <prop>/orientation/side-slip-deg</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-speed-kt</prop>
+		 <prop>/autopilot/settings/target-side-slip-deg</prop>
+		 <value>0.0</value>
     </reference>
     <output>
-      <prop>/autopilot/settings/target-pitch-deg</prop>
+		 <prop>/autopilot/internal/target-side-slip-deg</prop>
     </output>
     <config>
-      <Kp>-1.0</Kp>       <!-- proportional gain -->
+		 <Kp>5.0</Kp>        <!-- proportional gain -->
       <beta>1.0</beta>    <!-- input value weighing factor -->
       <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
       <gamma>0.0</gamma>  <!-- input value weighing factor for -->
                           <!-- unfiltered derivative error -->
-      <Ti>1.0</Ti>        <!-- integrator time -->
-      <Td>0.00001</Td>    <!-- derivator time -->
-      <u_min>-15.0</u_min><!-- minimum output clamp -->
-      <u_max>15.0</u_max> <!-- maximum output clamp -->
+		 <Ti>10.0</Ti>       <!-- integrator time -->
+		 <Td>0.000000001</Td>    <!-- derivator time -->
+		 <u_min>-0.50</u_min> <!-- minimum output clamp -->
+		 <u_max>0.50</u_max>  <!-- maximum output clamp -->
     </config>
   </pid-controller>
+
 
  <pid-controller>
     <name>Speed hold (vary pitch) Stage #2</name>
@@ -606,24 +675,25 @@
       <value>speed-with-pitch</value>
     </enable>
     <input>
-      <prop>/orientation/pitch-deg</prop>
+	    <prop>/autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-pitch-deg</prop>
+	    <prop>/autopilot/internal/target-side-slip-deg</prop>
     </reference>
+
     <output>
-      <prop>/controls/flight/elevator-trim</prop>
+	    <prop>/controls/engines/engine[0]/throttle</prop>
     </output>
     <config>
-      <Kp>-0.05</Kp>      <!-- proportional gain -->
-      <beta>1.0</beta>    <!-- input value weighing factor -->
-      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-                          <!-- unfiltered derivative error -->
-      <Ti>1.0</Ti>        <!-- integrator time -->
-      <Td>0.00001</Td>    <!-- derivator time -->
-      <u_min>-1.0</u_min> <!-- minimum output clamp -->
-      <u_max>1.0</u_max>  <!-- maximum output clamp -->
+	    <Kp>5.0</Kp>
+	    <beta>1.0</beta>
+	    <alpha>0.1</alpha>
+	    <gamma>0.0</gamma> 
+	    
+	    <Ti>10.0</Ti>
+	    <Td>0.00001</Td>
+	    <u_min>-1.0</u_min>
+	    <u_max>1.0</u_max>
     </config>
   </pid-controller>
 

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+sweat by maggse
+    -->
+<PropertyList>
+
+ <path>consapeng.ac</path>
+ 
+
+
+<!-- apmode animation 
+
+ <animation>
+	<type>select</type>	
+	<object-name>apmode_la</object-name>
+	<condition>
+		<equals>
+			<property>sim/model/doors/apmodela/position-norm</property>
+			<value>1.0</value>
+		</equals>
+	 </condition>
+ </animation>-->
+ 
+
+
+
+</PropertyList>

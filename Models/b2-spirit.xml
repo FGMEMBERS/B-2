@@ -12,39 +12,6 @@
  </offsets>
 
  
- <!--<model>
-	 <name>VertSpeedI</name>
-	 <path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
-	 <offsets>
-		 <x-m>-7.08</x-m>
-		 <y-m>-0.15</y-m>
-		 <z-m>0.63</z-m>
-		 <pitch-deg>0</pitch-deg>
-	 </offsets>
-  </model>
-  
-  <model>
-	  <name>Altimeter</name>
-	  <path>Aircraft/Instruments-3d/alt/alt.xml</path>
-	  <offsets>
-		  <x-m>-7.08</x-m>
-		  <y-m>-0.15</y-m>
-		  <z-m>0.55</z-m>
-		  <pitch-deg>0</pitch-deg>
-	  </offsets>
-  </model>
-  
-  <model>
-	  <name>tc</name>
-	  <path>Aircraft/Instruments-3d/tc/tc.xml</path>
-	  <offsets>
-		  <x-m>-7.08</x-m>
-		  <y-m>-0.248</y-m>
-		  <z-m>0.63</z-m>
-		  <pitch-deg>0</pitch-deg>
-	  </offsets>
-  </model>-->
-  
   <!-- lights -->
   
   <model>
@@ -93,35 +60,105 @@
 
   <!-- 3D cockpit start - uncomment on performance issues -->
   
+  <!-- <model>
+	  <name>alt</name>
+	  <path>Aircraft/Instruments-3d/alt/alt.xml</path>
+	  <offsets>
+		  <x-m>-7.090</x-m>
+		  <y-m>-0.088</y-m>
+		  <z-m>0.600</z-m>
+		  <pitch-deg>0</pitch-deg>
+	  </offsets>
+  </model>-->
+  
+  <model>
+	  <name>clock</name>
+	  <path>Aircraft/B-2/Models/Instruments-3d/clock.xml</path>
+	  <offsets>
+		  <x-m>-7.090</x-m>
+		  <y-m>-0.088</y-m>
+		  <z-m>0.620</z-m>
+		  <pitch-deg>0</pitch-deg>
+	  </offsets>
+  </model>
+  
   <model>
 	  <name>hd</name>
 	  <path>Aircraft/B-2/Models/Instruments-3d/nd.xml</path>
 	  <offsets>
-		  <x-m>-7.075</x-m>
-		  <y-m>-0.184</y-m>
-		  <z-m>0.554</z-m>
+		  <x-m>-7.095</x-m>
+		  <y-m>-0.207</y-m>
+		  <z-m>0.572</z-m>
 		  <pitch-deg>0</pitch-deg>
 	  </offsets>
   </model>
   
   <model>
-	  <name>ai</name>
-	  <path>Aircraft/Instruments-3d/primus-1000/primus1000-pfd.xml</path>
+	  <name>pfd</name>
+	  <!--<path>Aircraft/Instruments-3d/primus-1000/primus1000-pfd.xml</path>-->
+	  <path>Aircraft/B-2/Models/Instruments-3d/pfdb2.xml</path>
 	  <offsets>
-		  <x-m>-7.07</x-m>
-		  <y-m>-0.38</y-m>
-		  <z-m>0.540</z-m>
+		  <x-m>-7.090</x-m>
+		  <y-m>-0.390</y-m>
+		  <z-m>0.565</z-m>
 		  <pitch-deg>0</pitch-deg>
 	  </offsets>
   </model>
   
   <model>
-	  <name>engind</name>
-	  <path>Aircraft/B-2/Models/Instruments-3d/eicas_4.xml</path>
+	  <name>glas2</name>
+	  <path>Aircraft/B-2/Models/Instruments-3d/glas_2.xml</path>
 	  <offsets>
-		  <x-m>-7.07</x-m>
-		  <y-m>-0.560</y-m>
-		  <z-m>0.540</z-m>
+		  <x-m>-7.090</x-m>
+		  <y-m>-0.570</y-m>
+		  <z-m>0.565</z-m>
+		  <pitch-deg>0</pitch-deg>
+	  </offsets>
+  </model>
+  
+  <model>
+	  <name>glas3</name>
+	  <path>Aircraft/B-2/Models/Instruments-3d/glas_3.xml</path>
+	  <offsets>
+		  <x-m>-7.090</x-m>
+		  <y-m>-0.390</y-m>
+		  <z-m>0.380</z-m>
+		  <pitch-deg>0</pitch-deg>
+	  </offsets>
+  </model>
+  
+  <model>
+	  <name>apmodes</name>
+	  <path>Aircraft/B-2/Models/Instruments-3d/apmode.xml</path>
+	  <offsets>
+		  <x-m>-7.085</x-m>
+		  <y-m>-0.570</y-m>
+		  <z-m>0.563</z-m>
+		  <pitch-deg>0</pitch-deg>
+	  </offsets>
+  </model>
+  
+  <model>
+	  <name>turn coordinator</name>
+	  <path>Aircraft/B-2/Models/Instruments-3d/tcb2.xml</path>
+	  <offsets>
+		  <x-m>-7.080</x-m>
+		  <y-m>-0.390</y-m>
+		  <z-m>0.660</z-m>
+		  <pitch-deg>0</pitch-deg>
+	  </offsets>
+  </model>
+
+  
+  <!-- middle console -->
+  
+  <model>
+	  <name>conseng</name>
+	  <path>Aircraft/B-2/Models/Instruments-3d/cons_apeng.xml</path>
+	  <offsets>
+		  <x-m>-7.090</x-m>
+		  <y-m>0.001</y-m>
+		  <z-m>0.59</z-m>
 		  <pitch-deg>0</pitch-deg>
 	  </offsets>
   </model>
@@ -203,12 +240,14 @@
 	 <object-name>front_gear_hold</object-name>
 	 <object-name>left_gear</object-name>
 	 <object-name>left_gear_1</object-name>
+	 <object-name>left_gear_hold</object-name>
 	 <object-name>tire.002</object-name>
 	 <object-name>tire.003</object-name>
 	 <object-name>tire.004</object-name>
 	 <object-name>tire.005</object-name>
 	 <object-name>right_gear</object-name>
 	 <object-name>right_gear_1</object-name>
+	 <object-name>right_gear_hold</object-name>
 	 <object-name>tire.006</object-name>
 	 <object-name>tire.007</object-name>
 	 <object-name>tire.008</object-name>
@@ -506,6 +545,7 @@
 	 <name>lgm</name>
 	 <object-name>left_gear</object-name>
 	 <object-name>left_gear_1</object-name>
+	 <object-name>left_gear_hold</object-name>
 	 <object-name>tire.002</object-name>
 	 <object-name>tire.003</object-name>
 	 <object-name>tire.004</object-name>
@@ -566,6 +606,37 @@
 		 <x-m>2.12</x-m>
 		 <y-m>-5.87</y-m>
 		 <z-m>-2.05</z-m>
+	 </center>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>rotate</type>
+	 <name>lgh</name>
+	 <object-name>left_gear_hold</object-name>
+	 <property>gear/gear[1]/position-norm</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>-160.0</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.2</ind>
+			 <dep>-160.0</dep>
+		 </entry>
+		 <entry>
+			 <ind>1.0</ind>
+			 <dep>0.0</dep>
+		 </entry>
+	 </interpolation>
+	 <center>
+		 <x-m>1.92</x-m>
+		 <y-m>-5.87</y-m>
+		 <z-m>-1.18</z-m>
 	 </center>
 	 <axis>
 		 <x>0</x>
@@ -639,6 +710,7 @@
 	 <type>rotate</type>
 	 <object-name>right_gear</object-name>
 	 <object-name>right_gear_1</object-name>
+	 <object-name>right_gear_hold</object-name>
 	 <object-name>tire.006</object-name>
 	 <object-name>tire.007</object-name>
 	 <object-name>tire.008</object-name>
@@ -699,6 +771,37 @@
 		 <x-m>2.12</x-m>
 		 <y-m>5.87</y-m>
 		 <z-m>-2.05</z-m>
+	 </center>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>rotate</type>
+	 <name>rgh</name>
+	 <object-name>right_gear_hold</object-name>
+	 <property>gear/gear[1]/position-norm</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>-160.0</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.2</ind>
+			 <dep>-160.0</dep>
+		 </entry>
+		 <entry>
+			 <ind>1.0</ind>
+			 <dep>0.0</dep>
+		 </entry>
+	 </interpolation>
+	 <center>
+		 <x-m>1.92</x-m>
+		 <y-m>5.87</y-m>
+		 <z-m>-1.18</z-m>
 	 </center>
 	 <axis>
 		 <x>0</x>
@@ -1166,9 +1269,9 @@
 	 </axis>
  </animation>
  
- <!-- Nav Lights -->
+ <!-- Nav Lights - have been replaced-->
  
- <animation>
+ <!--<animation>
 	 <type>select</type>
 	 <object-name>navlight_left</object-name>
 	 <object-name>navlight_right</object-name>
@@ -1186,32 +1289,11 @@
 	 <emission>
 		 <red>0.5</red>
 		 <green>0</green>
-		 <blue>0</blue>
+		 <blue>0</blue>-->
 		 <!-- <factor-prop>controls/lighting/wingtip-nav-lights</factor-prop>-->
-	 </emission>
- </animation>
- 
- <animation>
-	 <type>material</type>
-	 <object-name>navlight_right</object-name>
-	 <emission>
-		 <red>0</red>
-		 <green>0.5</green>
-		 <blue>0.1</blue>
-		 <!-- <factor-prop>controls/lighting/wingtip-nav-lights</factor-prop>-->
-	 </emission>
- </animation>
- 
- <!-- <animation>
-	 <type>material</type>
-	 <object-name>TailNavLight</object-name>
-	 <emission>
-		 <red>0.5</red>
-		 <green>0.5</green>
-		 <blue>0.5</blue>
-		 <factor-prop>controls/lighting/tail-nav-lights</factor-prop>
-	 </emission>
+		 <!-- </emission>
  </animation>-->
+
 
  
 </PropertyList>
