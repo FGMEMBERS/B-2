@@ -22,8 +22,6 @@ B-2 set file.
 
     <description>Northrop B-2 Spirit</description>
 
-    <number-views type="int" archive="y">6</number-views>
-
     <chase-distance-m type="double" archive="y">-65.0</chase-distance-m>
 
     <view n="0">
