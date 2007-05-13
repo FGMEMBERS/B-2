@@ -58,9 +58,21 @@ B-2 set file.
       </config>
     </view>
 
+    <view n="4">
+      <config>
+        <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+      </config>
+    </view>
+
     <view n="5">
       <config>
         <target-z-offset-m archive="y" type="double">2.0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="6">
+      <config>
+        <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
       </config>
     </view>
 
