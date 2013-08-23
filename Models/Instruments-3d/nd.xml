@@ -158,7 +158,7 @@ Syd Adams, Josh Wilson
 	<object-name>slip</object-name>
 	<property>orientation/side-slip-deg[0]</property>
 	<axis> 
-	<x>1</x>
+	<x>-1</x> <!-- inverted after a change in side-slip sign (bug #901) -->
 	<y>0</y>
 	<z>0</z>
 	</axis>

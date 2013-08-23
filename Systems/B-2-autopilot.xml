@@ -35,6 +35,7 @@
 	  </enable>
 	  <input>
 		  <prop>/orientation/side-slip-deg</prop>
+		  <scale>-1.0</scale> <!-- change in side-slip sign as reported by yasim, see bug #901 -->
 	  </input>
 	  <reference>
 		  <prop>/autopilot/internal/target-side-slip-deg</prop>
@@ -131,6 +132,7 @@
 	  </enable>
 	  <input>
 		  <prop>/orientation/side-slip-deg</prop>
+		  <scale>-1.0</scale> <!-- change in side-slip sign as reported by yasim, see bug #901 -->
 	  </input>
 	  <reference>
 		  <prop>/autopilot/internal/target-side-slip-deg</prop>
@@ -226,6 +228,7 @@
 	  </enable>
 	  <input>
 		  <prop>/orientation/side-slip-deg</prop>
+		  <scale>-1.0</scale> <!-- change in side-slip sign as reported by yasim, see bug #901 -->
 	  </input>
 	  <reference>
 		  <prop>/autopilot/internal/target-side-slip-deg</prop>
@@ -320,6 +323,7 @@
 	  </enable>
 	  <input>
 		  <prop>/orientation/side-slip-deg</prop>
+		  <scale>-1.0</scale> <!-- change in side-slip sign as reported by yasim, see bug #901 -->
 	  </input>
 	  <reference>
 		  <prop>/autopilot/internal/target-side-slip-deg</prop>
@@ -645,6 +649,7 @@
     </enable>
     <input>
 		 <prop>/orientation/side-slip-deg</prop>
+		 <scale>-1.0</scale> <!-- change in side-slip sign as reported by yasim, see bug #901 -->
     </input>
     <reference>
 		 <prop>/autopilot/settings/target-side-slip-deg</prop>
