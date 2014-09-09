@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!--
+sweat by maggse
+    -->
+<PropertyList>
+
+ <path>apmode.ac</path>
+ 
+ <!-- AP Panel Hotspots -->
+ <panel>
+	 <path>Aircraft/B-2/Models/Instruments-3d/apmode-hotspots.xml</path>
+	 <top-left>
+		 <x-m>0.04</x-m>
+		 <y-m>-0.045</y-m>
+		 <z-m>0.135</z-m>
+	 </top-left>
+	 <bottom-left>
+		 <x-m>0.04</x-m>
+		 <y-m>-0.045</y-m>
+		 <z-m>0.115</z-m>
+	 </bottom-left>
+	 <bottom-right>
+		 <x-m>0.04</x-m>
+		 <y-m>0.215</y-m>
+		 <z-m>0.115</z-m>
+	 </bottom-right>
+	 
+</panel>
+
+ 
+<!-- apmode static  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<animation>
+	<name>apmode</name>	
+	<object-name>apmode</object-name>
+	<object-name>apmode_tow</object-name>
+	<object-name>apmode_law</object-name>
+	<object-name>apmode_flw</object-name>
+	<object-name>apmode_apw</object-name>
+	<object-name>apmode_asw</object-name>
+</animation>
+
+<!-- apmode animation -->
+
+ <animation>
+	<type>select</type>	
+	<object-name>apmode_la</object-name>
+	<condition>
+		<equals>
+			<property>sim/model/doors/apmodela/position-norm</property>
+			<value>1.0</value>
+		</equals>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>	
+	 <object-name>apmode_to</object-name>
+	 <condition>
+		 <equals>
+			 <property>sim/model/doors/apmodeto/position-norm</property>
+			 <value>1.0</value>
+		 </equals>
+	 </condition>
+ </animation>
+
+ <animation>
+	 <type>select</type>	
+	 <object-name>apmode_fl</object-name>
+	 <condition>
+		 <equals>
+			 <property>autopilot/locks/heading</property>
+			 <value>wing-leveler</value>
+		 </equals>
+	 </condition>
+ </animation>
+
+ <animation>
+	 <type>select</type>	
+	 <object-name>apmode_ap</object-name>
+	 <condition>
+			 <equals>
+				 <property>sim/model/doors/apmodeap/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+
+	 </condition>
+ </animation>
+
+ <animation>
+	 <type>select</type>	
+	 <object-name>apmode_as</object-name>
+	 <condition>
+		<equals>
+			<property>sim/model/doors/apmodeast/position-norm</property>
+			<value>1.0</value>
+		</equals>
+	 </condition>
+ </animation>
+
+
+</PropertyList>

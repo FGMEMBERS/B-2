@@ -1,0 +1,1142 @@
+<?xml version="1.0"?>
+<!--
+sweat by maggse
+    -->
+<PropertyList>
+
+ <path>glas_3.ac</path>
+ 
+ <!-- Throttle Panel Hotspots -->
+ <panel>
+	 <path>Aircraft/B-2/Models/Instruments-3d/glas_3-hotspots.xml</path>
+	 <top-left>
+		 <x-m>0.04</x-m>
+		 <y-m>-0.02</y-m>
+		 <z-m>0.060</z-m>
+	 </top-left>
+	 <bottom-left>
+		 <x-m>0.04</x-m>
+		 <y-m>-0.02</y-m>
+		 <z-m>-0.040</z-m>
+	 </bottom-left>
+	 <bottom-right>
+		 <x-m>0.04</x-m>
+		 <y-m>0.12</y-m>
+		 <z-m>-0.040</z-m>
+	 </bottom-right>
+	 
+</panel>
+
+ 
+<!-- apmode block  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+<!-- autopilot selected = needs some seperate select animations to work -->
+
+ <animation>
+	<type>select</type>	
+	<object-name>aplt_face</object-name>
+	<object-name>aplt_mark</object-name>
+	<object-name>aplt_activegg</object-name>
+	<object-name>aplt_mode</object-name>
+	<object-name>aplt_heading</object-name>
+	<object-name>aplt_alt</object-name>
+	<object-name>aplt_speed</object-name>
+	<object-name>aplt_stab</object-name>
+	<condition>
+		<equals>
+			<property>sim/model/doors/aplt/position-norm</property>
+			<value>1.0</value>
+		</equals>
+	 </condition>
+ </animation>
+ 
+ <!-- ap mode -->
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_takeoff</object-name>
+	 <condition>
+		 <and>
+		 <equals>
+			 <property>sim/model/doors/aplt/position-norm</property>
+			 <value>1.0</value>
+		 </equals>
+		 <equals>
+			 <property>sim/model/doors/apmodeto/position-norm</property>
+			 <value>1.0</value>
+		 </equals>
+	 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_landing</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>sim/model/doors/apmodela/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_flight</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/heading</property>
+				 <value>wing-leveler</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_ap</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>sim/model/doors/apmodeap/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_stealth</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>sim/model/doors/apmodeast/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <!-- heading -->
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_bug</object-name>
+	 <object-name>aplt_bug_1</object-name>
+	 <object-name>aplt_bug_2</object-name>
+	 <object-name>aplt_bug_3</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/heading</property>
+				 <value>dg-heading-hold</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_true</object-name>
+	 <object-name>aplt_true_1</object-name>
+	 <object-name>aplt_true_2</object-name>
+	 <object-name>aplt_true_3</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/heading</property>
+				 <value>true-heading-hold</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_nav1</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/heading</property>
+				 <value>nav1-hold</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <!-- bug count -->
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_bug_1</object-name>
+	 <property>autopilot/settings/heading-bug-deg</property>
+	 <factor>0.001</factor>
+	 <step>100</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_bug_2</object-name>
+	 <property>autopilot/settings/heading-bug-deg</property>
+	 <factor>0.01</factor>
+	 <step>10</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_bug_3</object-name>
+	 <property>autopilot/settings/heading-bug-deg</property>
+	 <factor>0.1</factor>
+	 <step>1</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <!-- true count -->
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_true_1</object-name>
+	 <property>autopilot/settings/true-heading-deg</property>
+	 <factor>0.001</factor>
+	 <step>100</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_true_2</object-name>
+	 <property>autopilot/settings/true-heading-deg</property>
+	 <factor>0.01</factor>
+	 <step>10</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_true_3</object-name>
+	 <property>autopilot/settings/true-heading-deg</property>
+	 <factor>0.1</factor>
+	 <step>1</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <!-- alt block -->
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_hold</object-name>
+	 <object-name>aplt_hold1</object-name>
+	 <object-name>aplt_hold2</object-name>
+	 <object-name>aplt_hold3</object-name>
+	 <object-name>aplt_hold4</object-name>
+	 <object-name>aplt_hold5</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/altitude</property>
+				 <value>altitude-hold</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_vfpm</object-name>
+	 <object-name>aplt_vfpm1</object-name>
+	 <object-name>aplt_vfpm2</object-name>
+	 <object-name>aplt_vfpm3</object-name>
+	 <object-name>aplt_vfpm4</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/altitude</property>
+				 <value>vertical-speed-hold</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_pitch</object-name>
+	 <object-name>aplt_pitch1</object-name>
+	 <object-name>aplt_pitch2</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/altitude</property>
+				 <value>pitch-hold</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <!-- alt count -->
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_hold1</object-name>
+	 <property>autopilot/settings/target-altitude-ft</property>
+	 <factor>0.00001</factor>
+	 <step>10000</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_hold2</object-name>
+	 <property>autopilot/settings/target-altitude-ft</property>
+	 <factor>0.0001</factor>
+	 <step>1000</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_hold3</object-name>
+	 <property>autopilot/settings/target-altitude-ft</property>
+	 <factor>0.001</factor>
+	 <step>100</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_hold4</object-name>
+	 <property>autopilot/settings/target-altitude-ft</property>
+	 <factor>0.01</factor>
+	 <step>10</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_hold5</object-name>
+	 <property>autopilot/settings/target-altitude-ft</property>
+	 <factor>0.1</factor>
+	 <step>1</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_vfpm1</object-name>
+	 <property>autopilot/settings/target-climb-rate-fpm</property>
+	 <factor>0.0001</factor>
+	 <step>1000</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_vfpm2</object-name>
+	 <property>autopilot/settings/target-climb-rate-fpm</property>
+	 <factor>0.001</factor>
+	 <step>100</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_vfpm3</object-name>
+	 <property>autopilot/settings/target-climb-rate-fpm</property>
+	 <factor>0.01</factor>
+	 <step>10</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_vfpm4</object-name>
+	 <property>autopilot/settings/target-climb-rate-fpm</property>
+	 <factor>0.1</factor>
+	 <step>1</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_pitch1</object-name>
+	 <property>autopilot/settings/target-pitch-deg</property>
+	 <factor>0.01</factor>
+	 <step>10</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_pitch2</object-name>
+	 <property>autopilot/settings/target-pitch-deg</property>
+	 <factor>0.1</factor>
+	 <step>1</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <!-- speed block -->
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_speed_t1</object-name>
+	 <object-name>aplt_speed_t2</object-name>
+	 <object-name>aplt_speed_t3</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/speed</property>
+				 <value>speed-with-throttle</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_speed1</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/speed</property>
+				 <value>speed-with-throttle</value>
+			 </equals>
+			 <equals>
+			 <property>/autopilot/locks/heading</property>
+			 <value>wing-leveler</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_speed1b</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>sim/model/doors/apmodeap/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/speed</property>
+				 <value>speed-with-throttle</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_speed1o</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>sim/model/doors/apmodeto/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/speed</property>
+				 <value>speed-with-throttle</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_speed1b</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>sim/model/doors/apmodela/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/speed</property>
+				 <value>speed-with-throttle</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_speed2</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/speed</property>
+				 <value></value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <!-- speed count -->
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_speed_t1</object-name>
+	 <property>autopilot/settings/target-speed-kt</property>
+	 <factor>0.001</factor>
+	 <step>100</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_speed_t2</object-name>
+	 <property>autopilot/settings/target-speed-kt</property>
+	 <factor>0.01</factor>
+	 <step>10</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>aplt_speed_t3</object-name>
+	 <property>autopilot/settings/target-speed-kt</property>
+	 <factor>0.1</factor>
+	 <step>1</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <!-- stabilisator -->
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_stab1</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/heading</property>
+				 <value>wing-leveler</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_stab2</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/heading</property>
+				 <value></value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_stab1b</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+		 <or>
+			 <equals>
+				 <property>/autopilot/locks/heading</property>
+				 <value>dg-heading-hold</value>
+			 </equals>
+			 <equals>
+				 <property>/autopilot/locks/heading</property>
+				 <value>true-heading-hold</value>
+			 </equals>
+		 </or>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <!-- to and la control gears and airbrake -->
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_airb</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>sim/model/doors/apmodela/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>aplt_gear</object-name>
+	 <condition>
+		 <and>
+			 <equals>
+				 <property>sim/model/doors/aplt/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+			 <equals>
+				 <property>sim/model/doors/apmodeto/position-norm</property>
+				 <value>1.0</value>
+			 </equals>
+		 </and>
+	 </condition>
+ </animation>
+ 
+
+ <!-- fuel block xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>fuel_face</object-name>
+	 <object-name>fueltext_0</object-name>
+	 <object-name>fueltext_1</object-name>
+	 <object-name>fueltext_2</object-name>
+	 <object-name>fueltext_3</object-name>
+	 <object-name>fueltext_4</object-name>
+	 <object-name>fueltext_5</object-name>
+	 <object-name>fph_1</object-name>
+	 <object-name>fph_2</object-name>
+	 <object-name>fph_3</object-name>
+	 <object-name>fph_4</object-name>
+	 <object-name>fuel_tank0.006</object-name>
+	 <object-name>fuel_tank0.002</object-name>
+	 <object-name>fuel_tank0.001</object-name>
+	 <object-name>fuel_tank0</object-name>
+	 <object-name>fuel_tank0.003</object-name>
+	 <condition>
+		 <equals>
+			 <property>sim/model/doors/fuel3/position-norm</property>
+			 <value>1.0</value>
+		 </equals>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>fuel_tank0.007</object-name>
+	 <object-name>fuel_tank0.008</object-name>
+	 <condition>
+		 <equals>
+			 <property>sim/model/doors/fuel3/position-norm</property>
+			 <value>1.0</value>
+		 </equals>
+	 </condition>
+ </animation>
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>fuel_tank0.004</object-name>
+	 <object-name>fuel_tank0.005</object-name>
+	 <object-name>fuel_mark</object-name>
+	 <condition>
+		 <equals>
+			 <property>sim/model/doors/fuel3/position-norm</property>
+			 <value>1.0</value>
+		 </equals>
+	 </condition>
+ </animation>
+ 
+ 
+ 
+ <!--<animation>
+	 <type>select</type>
+	 <name>fuel</name>
+
+	 <condition>
+		 <equals>
+			 <property>sim/model/doors/fuel/position-norm</property>
+			 <value>1.0</value>
+		 </equals>
+	 </condition>
+ </animation>-->
+ 
+ <!-- total fuel -->
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fueltext_0</object-name>
+	 <property>/consumables/fuel/total-fuel-lbs</property>
+	 <factor>0.000001</factor>
+	 <step>100000</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fueltext_1</object-name>
+	 <property>/consumables/fuel/total-fuel-lbs</property>
+	 <factor>0.00001</factor>
+	 <step>10000</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fueltext_2</object-name>
+	 <property>/consumables/fuel/total-fuel-lbs</property>
+	 <factor>0.0001</factor>
+	 <step>1000</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fueltext_3</object-name>
+	 <property>/consumables/fuel/total-fuel-lbs</property>
+	 <factor>0.001</factor>
+	 <step>100</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fueltext_4</object-name>
+	 <property>/consumables/fuel/total-fuel-lbs</property>
+	 <factor>0.01</factor>
+	 <step>10</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fueltext_5</object-name>
+	 <property>/consumables/fuel/total-fuel-lbs</property>
+	 <factor>0.1</factor>
+	 <step>1</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <!-- fuel lbs/h -->
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fph_1</object-name>
+	 <property>engines/engine[0]/fuel-flow-gph</property>
+	 <factor>0.0001</factor>
+	 <step>1000</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fph_2</object-name>
+	 <property>engines/engine[0]/fuel-flow-gph</property>
+	 <factor>0.001</factor>
+	 <step>100</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fph_3</object-name>
+	 <property>engines/engine[0]/fuel-flow-gph</property>
+	 <factor>0.01</factor>
+	 <step>10</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fph_4</object-name>
+	 <property>engines/engine[0]/fuel-flow-gph</property>
+	 <factor>0.1</factor>
+	 <step>1</step>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+ 
+ <!-- fuel tank ind -->
+ 
+ <!-- total -->
+
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fuel_tank0.006</object-name>
+	 <property>/consumables/fuel/total-fuel-lbs</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.202</dep>
+		 </entry>
+		 <entry>
+			 <ind>160000.0</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+	 <axis>
+		 <x>0.0</x>
+		 <y>1.0</y>
+		 <z>0.0</z>
+	 </axis>
+ </animation>
+ 
+ <!-- ind tanks -->
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fuel_tank0.002</object-name>
+	 <property>/consumables/fuel/tank[2]/level-lbs</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.202</dep>
+		 </entry>
+		 <entry>
+			 <ind>30000.0</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+	 <axis>
+		 <x>0.0</x>
+		 <y>1.0</y>
+		 <z>0.0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fuel_tank0.001</object-name>
+	 <property>/consumables/fuel/tank[3]/level-lbs</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.202</dep>
+		 </entry>
+		 <entry>
+			 <ind>30000.0</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+	 <axis>
+		 <x>0.0</x>
+		 <y>1.0</y>
+		 <z>0.0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fuel_tank0</object-name>
+	 <property>/consumables/fuel/tank[0]/level-lbs</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.202</dep>
+		 </entry>
+		 <entry>
+			 <ind>35000.0</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+	 <axis>
+		 <x>0.0</x>
+		 <y>1.0</y>
+		 <z>0.0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fuel_tank0.003</object-name>
+	 <property>/consumables/fuel/tank[1]/level-lbs</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.202</dep>
+		 </entry>
+		 <entry>
+			 <ind>35000.0</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+	 <axis>
+		 <x>0.0</x>
+		 <y>1.0</y>
+		 <z>0.0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fuel_tank0.007</object-name>
+	 <property>/consumables/fuel/tank[4]/level-lbs</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.202</dep>
+		 </entry>
+		 <entry>
+			 <ind>15000.0</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+	 <axis>
+		 <x>0.0</x>
+		 <y>1.0</y>
+		 <z>0.0</z>
+	 </axis>
+ </animation>
+ 
+ <animation>
+	 <type>textranslate</type>
+	 <object-name>fuel_tank0.008</object-name>
+	 <property>/consumables/fuel/tank[5]/level-lbs</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0.202</dep>
+		 </entry>
+		 <entry>
+			 <ind>15000.0</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+	 <axis>
+		 <x>0.0</x>
+		 <y>1.0</y>
+		 <z>0.0</z>
+	 </axis>
+ </animation>
+
+<!-- wpns cluster xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<animation>
+	<type>select</type>
+	<object-name>wpns_face</object-name>
+	<object-name>wpns_mark</object-name>
+	<condition>
+		<equals>
+			<property>sim/model/doors/wpns/position-norm</property>
+			<value>1.0</value>
+		</equals>
+	</condition>
+</animation>
+
+ <!-- syst animation xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+ 
+ <animation>
+	 <type>select</type>
+	 <object-name>syst_face</object-name>
+	 <object-name>syst_mark</object-name>
+	 <object-name>syst_text</object-name>
+	 <object-name>syst_text.001</object-name>
+	 <object-name>syst_arrow</object-name>
+	 <object-name>syst_arrow.001</object-name>
+	 <object-name>syst_arrow.002</object-name>
+	 <condition>
+		 <equals>
+			 <property>sim/model/doors/syst3/position-norm</property>
+			 <value>1.0</value>
+		 </equals>
+	 </condition>
+ </animation>
+
+</PropertyList>

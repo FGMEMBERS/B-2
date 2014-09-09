@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+	<name>apmode hotspots</name>
+	<background>Aircraft/B-2/Models/transparent.rgb</background>
+	<x>0</x>
+	<y>0</y>
+	<w>600</w>
+	<h>600</h>
+	<y-offset>0</y-offset>
+	<instruments>
+		<instrument>
+			<x>0</x>
+			<y>0</y>
+			<w>600</w>
+			<h>2400</h>
+			<w-base>600</w-base>
+			<h-base>150</h-base>
+			<layers>
+				<!--<layer>
+					<name>background</name>
+					<texture>
+						<path>Aircraft/B-2/Models/transparent.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
+					</texture>
+				</layer>-->
+			</layers>
+
+
+			<actions>
+
+				<!-- landing -->
+				<action>
+					<button>0</button>
+					<x>0</x>
+					<y>0</y>
+					<w>50</w>
+					<h>50</h>
+
+					<binding>
+						<command>nasal</command>
+						<script>controls.apmodela()</script>
+					</binding>
+				</action>
+				<!-- takeoff -->
+				<action>
+					<button>0</button>
+					<x>50</x>
+					<y>0</y>
+					<w>50</w>
+					<h>50</h>
+					<binding>
+						<command>nasal</command>
+						<script>controls.apmodeto()</script>
+					</binding>
+				</action>
+				<!-- flight -->
+				<action>
+					<button>0</button>
+					<x>100</x>
+					<y>0</y>
+					<w>50</w>
+					<h>50</h>
+					<binding>
+						<command>nasal</command>
+						<script>controls.apmodefl()</script>
+					</binding>
+				</action>
+				<!-- autopilot -->
+				<action>
+					<button>0</button>
+					<x>150</x>
+					<y>0</y>
+					<w>50</w>
+					<h>50</h>
+					<binding>
+						<command>nasal</command>
+						<script>controls.apmodeap()</script>
+					</binding>
+				</action>
+				<!-- autopilot stealth -->
+				<action>
+					<button>0</button>
+					<x>200</x>
+					<y>0</y>
+					<w>50</w>
+					<h>50</h>
+					<binding>
+						<command>nasal</command>
+						<script>controls.apmodeast()</script>
+					</binding>
+				</action>
+
+			</actions>
+
+		</instrument>
+	</instruments>
+
+</PropertyList>
+
