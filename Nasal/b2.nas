@@ -243,7 +243,7 @@ controls.apmodefl = func {
 
 if(WOW == 1) {
 } else {
-  setprop("/autopilot/locks/speed", "");
+  setprop("/autopilot/locks/speed", "speed-with-throttle");
   setprop("/autopilot/settings/target-speed-kt", 280);
   setprop("/autopilot/locks/altitude", "");
   setprop("/controls/flight/flaps", 0);
@@ -264,7 +264,7 @@ if(WOW == 1) {
 
   setprop("sim/model/doors/apmodeap/position-norm", 1);
   setprop("sim/model/doors/apmodeast/position-norm",0);
-  setprop("/autopilot/locks/speed", "");
+  setprop("/autopilot/locks/speed", "speed-with-throttle");
   setprop("/autopilot/settings/target-speed-kt", 290);
   setprop("/autopilot/locks/altitude", "altitude-hold");
   setprop("/autopilot/settings/target-climb-rate-fpm", 2000);
@@ -381,3 +381,30 @@ if(getprop("/position/altitude-agl-ft") < 60) {
 
 #fuelflowlb();
 #}
+
+# Jump to next waypoint earlier
+var next_waypoint = func {
+	if ('true-heading-hold' == getprop('/autopilot/locks/heading')
+		and getprop('/autopilot/route-manager/active')) {
+
+		var max_wpt=getprop("/autopilot/route-manager/route/num");
+		var atm_wpt=getprop("/autopilot/route-manager/current-wp");
+		var eta_seconds = getprop('/autopilot/route-manager/wp/eta-seconds');
+		var wp_dist = getprop("/autopilot/route-manager/wp/dist");
+
+		if (eta_seconds != nil and wp_dist != nil
+			and eta_seconds < 37 and wp_dist < 30) {
+
+			if (getprop("/autopilot/route-manager/current-wp")<=max_wpt){
+				atm_wpt+=1;
+				setprop("/autopilot/route-manager/current-wp", atm_wpt);
+			}
+
+		}
+
+	}
+
+	settimer(next_waypoint, 0);
+}
+settimer(next_waypoint, 0);
+

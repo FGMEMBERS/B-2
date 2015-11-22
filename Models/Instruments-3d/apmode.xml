@@ -12,17 +12,17 @@ sweat by maggse
 	 <top-left>
 		 <x-m>0.04</x-m>
 		 <y-m>-0.045</y-m>
-		 <z-m>0.135</z-m>
+		 <z-m>0.104</z-m>
 	 </top-left>
 	 <bottom-left>
 		 <x-m>0.04</x-m>
 		 <y-m>-0.045</y-m>
-		 <z-m>0.115</z-m>
+		 <z-m>0.094</z-m>
 	 </bottom-left>
 	 <bottom-right>
 		 <x-m>0.04</x-m>
 		 <y-m>0.215</y-m>
-		 <z-m>0.115</z-m>
+		 <z-m>0.094</z-m>
 	 </bottom-right>
 	 
 </panel>
