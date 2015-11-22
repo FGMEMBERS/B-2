@@ -262,7 +262,7 @@
 		  <value>nav1-hold</value>
 	  </enable>
 	  <input>
-		  <prop>/autopilot/internal/nav1-track-error-deg</prop>
+		  <prop>/autopilot/internal/nav1-track-error-lookahead-deg</prop>
 	  </input>
 	  <reference>
 		  <value>0.0</value>
@@ -438,7 +438,7 @@
       <Kp>0.25</Kp>          <!-- proportional gain -->
       <Ki>0.0</Ki>          <!-- integral gain -->
       <u_min>-16.67</u_min> <!-- minimum output clamp -->
-      <u_max>40.0</u_max>   <!-- maximum output clamp -->
+      <u_max>16.67</u_max>   <!-- maximum output clamp -->
     </config>
   </pi-simple-controller>
 
