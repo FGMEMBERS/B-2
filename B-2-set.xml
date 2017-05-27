@@ -22,6 +22,22 @@ B-2 set file.
 
     <description>Northrop B-2 Spirit</description>
 
+    <tags>
+	<tag>bomber</tag>
+	<tag>grumman</tag>
+	<tag>northrop</tag>
+	<tag>1990s</tag>
+	<tag>2000s</tag>
+	<tag>2010s</tag>
+	<tag>gulfwar2</tag>
+	<tag>glass-cockpit</tag>
+	<tag>hud</tag>
+	<tag>ifr</tag>
+	<tag>retractable-gear</tag>
+	<tag>jet</tag>
+	<tag>refuel</tag>
+    </tags>
+
     <chase-distance-m type="double" archive="y">-65.0</chase-distance-m>
 
     <view n="0">
